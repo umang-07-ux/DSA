@@ -1,0 +1,17 @@
+class Solution {
+    public int subarraysDivByK(int[] nums, int k) {
+        int n=nums.length;
+        int res=0;
+        int sum=0;
+        Map<Integer,Integer> freq=new HashMap<>();
+        freq.put(0,1);
+        for(int i=0;i<n;i++) {
+            sum+=nums[i];
+            int rem=Math.floorMod(sum,k);
+            int f=freq.getOrDefault(rem,0);
+            freq.put(rem,freq.getOrDefault(rem,0)+1);
+            res+=f;
+        }
+        return res;
+    }
+}
