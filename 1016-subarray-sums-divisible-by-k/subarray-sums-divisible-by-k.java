@@ -7,7 +7,10 @@ class Solution {
         freq.put(0,1);
         for(int i=0;i<n;i++) {
             sum+=nums[i];
-            int rem=Math.floorMod(sum,k);
+            int rem=sum%k;
+            if(rem<0) {
+                rem=rem+k;
+            }
             int f=freq.getOrDefault(rem,0);
             freq.put(rem,freq.getOrDefault(rem,0)+1);
             res+=f;
