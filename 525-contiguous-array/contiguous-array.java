@@ -19,7 +19,7 @@ class Solution {
                 int maxlength=i-map.get(difference);
                 res=Math.max(res,maxlength);
             }
-            else {
+            if(!map.containsKey(difference)) {
                 map.put(difference,i);
             }
         }
