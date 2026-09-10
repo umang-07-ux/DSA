@@ -4,6 +4,10 @@ class Solution {
         if(n<=999) {
             return 0;
         }
-        return n-1000+1;
+        int count=0;
+        for(int i=1000;i<=n;i++) {
+            count++;
+        }
+        return count;
     }
 }
